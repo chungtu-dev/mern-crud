@@ -27,6 +27,51 @@
   font-weight: 400;
 }
 
+/* home */
+.home_content-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-card-body{
+  background: #CFB997;
+  border-top-left-radius: 15%;
+  border-top-right-radius: 15%;
+  margin: 15px 0 0 0;
+}
+
+.home_content-info .home_content-info-card {
+  width: 25%;
+  margin: 20px;
+  background: #7B8FA1;
+  border: none;
+}
+
+.home_content-info .home_content-info-card .home_content-info-card-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home_content-info .home_content-info-card .home_content-info-card-imgdiv {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 0 0;
+}
+
+.home-info-cartText span{
+  font-weight: 500;
+}
+
+.area_btn-action {
+  text-align: center;
+}
+
+.area_btn-action .btn {
+  margin: 5px 10px;
+}
+
 /* form register */
 .body {
   padding: 20px;

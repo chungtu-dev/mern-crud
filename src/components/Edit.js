@@ -48,38 +48,30 @@ const Edit = () => {
 
             const filterProvince = provinceList.filter((i) => i.province_id === selectProvince)
             const nameProvice = Object.assign({}, ...filterProvince)
-            // console.log('Province name',nameProvice.province_name);
 
             const filterDistrict = districtList.filter((i) => i.district_id === selectDistrict)
             const nameDistrict = Object.assign({}, ...filterDistrict)
-            // console.log('Province name',nameDistrict.district_name);
 
             const filterWard = wardList.filter((i) => i.district_id === nameDistrict.district_id)
             const nameWard = Object.assign({}, ...filterWard)
-            // console.log('Province name',nameWard.ward_name);
-
-            const fullAddress = nameProvice.province_name + ',' + nameDistrict.district_name + ',' + nameWard.ward_name
-            console.log('full address', fullAddress);
 
             const newUserUpdate = {
                 ...inpval,
                 gender: inpval.gender !== newGender ? newGender : inpval.gender,
-                attachment: inpval.attachment !== newAttachment ? newAttachment : inpval.attachment === "" ? newAttachment : inpval.attachment,
+                attachment: inpval.attachment !== newAttachment ? newAttachment : inpval.attachment,
                 province: nameProvice.province_name,
                 district: nameDistrict.district_name,
                 ward: nameWard.ward_name
             }
             await axios.put(`http://localhost:5000/user/${id}`, newUserUpdate)
-            // alert('Updated user successfully!')
-            // navigate('/')
-            console.log('old user', inpval);
-            console.log('newUserUpdate', newUserUpdate);
+            alert('Updated user successfully!')
+            navigate('/')
+            // console.log('old user', inpval);
+            // console.log('newUserUpdate', newUserUpdate);
         } catch (error) {
             console.log(error);
         }
     }
-
-    // console.log('inpval',inpval);
 
     const uploadImage = async (e) => {
         const file = e.target.files[0];
@@ -242,6 +234,7 @@ const Edit = () => {
                                                 <div className="mb-3 col-lg-12 col-md-12 col-12">
                                                     <span>Giới tính: <span style={{ fontWeight: 500 }}>{inpval.gender}</span></span>
                                                     <div className='checkBox_gender' onChange={handleChangeGender}>
+                                                    <span>Chọn giới tính: </span>
                                                         <div className='check-gender-item'>
                                                             <input readOnly type="radio" value="Anh" name="gender" checked={newGender === "Anh"} /> <span className='checkBox_gender-info'>Anh</span>
                                                         </div>
@@ -250,7 +243,7 @@ const Edit = () => {
                                                         </div>
                                                     </div>
 
-                                                    <div className='mt-3 form_choose-another-address'>
+                                                    <div className='mt-5 form_choose-another-address'>
                                                         <span>Địa chỉ: <span style={{ fontWeight: 500 }}>{inpval.province}, {inpval.district}, {inpval.ward}</span></span>
 
                                                         <div className='form_address'>
