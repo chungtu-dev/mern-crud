@@ -1,38 +1,334 @@
-.App {
-  text-align: center;
+.add_btn {
+  text-align: right;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left_view h3 {
+  font-size: 21px;
 }
 
-.App-header {
-  background-color: #282c34;
+.left_view p {
+  font-weight: 600;
+}
+
+.left_view span {
+  font-weight: 400;
+}
+
+.right_view p {
+  font-weight: 600;
+}
+
+
+.right_view span {
+  font-weight: 400;
+}
+
+/* form register */
+.body {
+  padding: 20px;
   min-height: 100vh;
+  background: #223243;
+}
+
+.container_form {
+  padding: 40px;
+  border-radius: 20px;
+  border: 8px solid #223243;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35), inset -5px -5px 15px rgba(255, 255, 255, 0.1), inset 5px 5px 15px rgba(0, 0, 0, 0.35)
+}
+
+.container_form .form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_form .form .form_inp,
+.container_form .form .form_choose_address {
+  width: 100%;
+}
+
+.container_form .form .form_inp .checkBox_gender {
+  padding: 0 0 0 10px;
+  margin: 10px;
+  color: #fff;
+}
+
+.container_form .form .form_inp .checkBox_gender .checkBox_gender-info {
+  margin: 0px 10px 0 0;
+}
+
+.container_form .form .form_choose_address {
+  padding: 0 0 0 15px;
+}
+
+.container_form .form .form_choose_address h5 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.container_form .form .form_choose_address .form_choose_address-another-info {
+  color: #fff;
+}
+
+.container_form .form .form_choose_address .form_choose_address-areatext {
+  margin: 7px 0 0 0;
+}
+
+.container_form .form .inputBox {
+  position: relative;
+  width: 100%;
+  padding: 0 15px 0 0px;
+}
+
+.container_form .form .inputBox input {
+  padding: 12px 10px 12px 48px;
+  border: none;
+  width: 100%;
+  background: #223243;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-weight: 300;
+  border-radius: 15px;
+  font-size: 1em;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+  outline: none;
+}
+
+.container_form .form .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 12px 10px 12px 48px;
+  pointer-events: none;
+  font-size: 1em;
+  font-weight: 300;
+  transition: 0.5s;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5)
+}
+
+.container_form .form .inputBox input:valid~span,
+.container_form .form .inputBox input:focus~span {
+  color: #00dfc4;
+  border: 1px solid #00dfc4;
+  background: #223243;
+  transform: translateX(25px) translateY(-7px);
+  font-size: 0.6em;
+  padding: 0 8px;
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+}
+
+.container_form .form .inputBox input:valid,
+.container_form .form .inputBox input:focus {
+  border: 1px solid #00dfc4;
+}
+
+.container_form .form .inputBox i {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  width: 25px;
+  padding: 2px 0;
+  padding-right: 8px;
+  color: #00dfc4;
+  border-right: 1px solid #00dfc4;
+}
+
+.choose_img,
+.choose_img label {
+  color: #fff;
+}
+
+.choose_img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.choose_img .choose_img-btn,
+.choose_img .img_base {
+  visibility: hidden;
+  position: absolute;
+}
+
+.choose_img .delete_img {
+  cursor: pointer;
+  padding: 15px;
+  background: #d05959;
   color: white;
+  border: none;
+  display: flex;
+  margin: 10px 50px;
+  justify-content: center;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* form edit */
+.fe_body {
+  display: flex;
+  height: 100%;
+  padding: 15px;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #cfd1e1;
+  justify-content: center;
+  border-radius: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fe_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fe_container .fe_box {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fe_container .fe_box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 100%;
+  background: linear-gradient(#fff, #fff, #e3e3e3);
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.fe_container .fe_box::after {
+  content: "";
+  position: absolute;
+  top: 1;
+  right: -1px;
+  width: 25px;
+  height: 100%;
+  background: linear-gradient(#fff, #fff, #9d9d9d);
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.fe_container .fe_box .fe_shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+
+.fe_container .fe_box .fe_shadow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(100% + 96px);
+  width: 120%;
+  height: 240%;
+  background: linear-gradient(rgba(0, 0, 0, 0.075), tranparent);
+  transform: skewX(45deg);
+}
+
+.fe_container .fe_box .fe_shadow::after {
+  content: "";
+  position: absolute;
+  bottom: -200%;
+  left: calc(100% + 80px);
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(rgba(0, 0, 0, 0.075), tranparent);
+  transform: skewX(45deg);
+}
+
+.fe_cover {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  background: #cfd1e1;
+  z-index: 10;
+}
+
+.fe_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#dbdae1, #a3aaba);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+    15px 15px 15px rgba(0, 0, 0, 0.1),
+    20px 10px 20px rgba(0, 0, 0, 0.1),
+    50px 50px 80px rgba(0, 0, 0, 0.25),
+    inset 3px 3px 2px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.fe_content .fe_form {
+  position: relative;
+  width: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fe_content .fe_form .fe_inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.fe_content .fe_form .fe_inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px 0 10px 25px;
+  font-size: 1.25em;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-bottom: 3px solid #444;
+  outline: none;
+}
+
+.fe_content .fe_form .fe_inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px 0 10px 10px;
+  font-size: 25px;
+  pointer-events: none;
+  color: #444;
+  transition: 0.5s;
+}
+
+.fe_content .fe_form .fe_inputBox input:focus~span,
+.fe_content .fe_form .fe_inputBox input:valid~span {
+  transform: translateY(-20px);
+  font-size: 0.9em;
+  background: #444;
+  color: #fff;
+  padding: 2px 4px;
+}
+
+.fe_main-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.fe_main-form .fe_form-sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
