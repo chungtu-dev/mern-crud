@@ -41,7 +41,7 @@ const Home = () => {
                 <table className="table mt-2">
                     <thead>
                         <tr className='table-dark'>
-                            <th scope="col">id</th>
+                            {/* <th scope="col">id</th> */}
                             <th scope="col">username</th>
                             <th scope="col">email</th>
                             <th scope="col">job</th>
@@ -53,7 +53,7 @@ const Home = () => {
                         {
                             data?.map((i) => (
                                 <tr key={i._id}>
-                                    <th scope="row">{i._id}</th>
+                                    {/* <th scope="row">{i._id}</th> */}
                                     <td>{i.name}</td>
                                     <td>{i.email}</td>
                                     <td>{i.work}</td>

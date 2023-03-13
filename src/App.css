@@ -172,8 +172,10 @@
 /* form edit */
 .fe_body {
   display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 15px;
+  margin: 10px 0;
   min-height: 100vh;
   overflow: hidden;
   background: #cfd1e1;
@@ -272,15 +274,17 @@
   justify-content: center;
   align-items: center;
   padding: 40px;
+  flex-direction: column;
 }
 
 .fe_content .fe_form {
   position: relative;
-  width: 260px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px 30px;
 }
 
 .fe_content .fe_form .fe_inputBox {
@@ -331,4 +335,48 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px 30px;
+}
+
+.fe_main-form .fe_form-sub .img_base {
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+}
+
+.fe_form-sub .btn_choose-new-img {
+  margin-top: 15px;
+  background: azure;
+  padding: 3px 8px;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+}
+
+.checkBox_gender {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkBox_gender .check-gender-item {
+  padding: 0 5px;
+}
+
+.text_area-another-request {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn_submit {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 15px 0;
+}
+
+.btn_submit button {
+  width: 40%;
+}
+
+.form_choose-another-address h5 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: center;
 }
