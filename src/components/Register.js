@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import axios from "axios";
+import {postNewUserReq} from '../api/index'
 
 const Register = () => {
 
@@ -168,9 +169,11 @@ const Register = () => {
                 district: nameDistrict.district_name,
                 ward: nameWard.ward_name
             }
-            console.log('info', info);
+            // console.log('info', info);
 
-            await axios.post('http://localhost:5000/user', info)
+            // await axios.post('http://localhost:5000/user', info)
+            postNewUserReq(info)
+            alert("regist successfully!")
             navigation('/')
 
         } catch (error) {

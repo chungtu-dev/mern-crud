@@ -6,7 +6,7 @@ import { MdOutlineLocationOn } from 'react-icons/md'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useParams, NavLink } from 'react-router-dom'
-import axios from 'axios';
+import {getUserByIdReq} from '../api/index'
 
 const Details = () => {
 
@@ -21,11 +21,16 @@ const Details = () => {
     add: '',
     desc: '',
   })
-  // console.log('inpval detail', inpval);
 
   const getUserById = async () => {
-    const res = await axios.get(`http://localhost:5000/user/${id}`)
-    setINP(res.data)
+    // const res = await axios.get(`http://localhost:5000/user/${id}`)
+    getUserByIdReq(id).then((res)=>{
+      try {
+        setINP(res)
+      } catch (error) {
+        console.log(error);
+      }
+    })
   }
 
   useEffect(() => {
@@ -45,7 +50,7 @@ const Details = () => {
           </div> */}
           <div className="row">
             <div className='left_view col-lg-6 col-md-6 col-12'>
-              <img src={inpval.attachment} style={{ width: 50 }} alt="profile-img" />
+              <img src={inpval.attachment} style={{ width: 200 }} alt="profile-img" />
               <h3 className="mt-3">Name: <span style={{ fontWeight: 400 }}>{inpval.name}</span></h3>
               <h3 className="mt-3">Gender: <span style={{ fontWeight: 400 }}>{inpval.gender}</span></h3>
               <h3 className="mt-3">Age: <span style={{ fontWeight: 400 }}>{inpval.age}</span></h3>
